@@ -4,10 +4,12 @@ screen_width = 0;
 screen_height = 0;
 apple = "";
 speak_data = "";
-to_number = "";
+to_number = 0;
 
 draw_apple = "";
-
+function preload() {
+  apple = loadImage("apple.png");
+}
 var SpeechRecognition = window.webkitSpeechRecognition;
   
 var recognition = new SpeechRecognition();
@@ -38,7 +40,7 @@ recognition.onresult = function(event) {
 function setup() {
   screen_width=window.innerWidth;
   screen_height=window.innerHeight;
-  creatCanvas(screen_width,screen_height-150)
+  canvas=createCanvas(screen_width,screen_height-150)
   canvas.position(0,150)
 }
 
@@ -63,7 +65,4 @@ function speak(){
   synth.speak(utterThis);
 
   speak_data = "";
-}
-function preload(){
-  apple = loadImage("images.jpeg");
 }
