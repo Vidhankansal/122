@@ -65,5 +65,5 @@ function speak(){
   speak_data = "";
 }
 function preload(){
-  apple = loadImage("");
+  apple = loadImage("images.jpeg");
 }
